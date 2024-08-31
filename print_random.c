@@ -9,10 +9,14 @@ char* rand_string_alloc(size_t size);
 
 
 int main(){
-	srand(time(NULL));
-	char* string = rand_string_alloc(7);	
-	printf("\n%s\n", string);
-	//printf("\nHello World");
+	int a;
+	/* seed the randomizer */
+	srand( (unsigned)time(NULL) );
+	printf("Today's random word: ");
+	for(a=0;a<7;a++)
+		putchar( randchar() );
+	putchar('\n');
+	return(0);
 }
 
 char* rand_string_alloc(size_t size)
